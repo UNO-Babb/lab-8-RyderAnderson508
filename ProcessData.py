@@ -18,6 +18,15 @@ def main():
     last = data[1]
     IDNUM = data[3]
     year = data[5]
+    if (year.find("F")!=-1):
+      year="FR"
+    elif (year.find("h")!=-1):
+      year="SO"
+    elif (year.find("J")!=-1):
+      year="JR"
+    elif (year.find("i")!=-1):
+      year="SR"
+
     major = data[6]
     abrv_Major = major[0:3]
     
@@ -42,7 +51,7 @@ def makeID(first, last, IDNUM, major, dash, year):
   while len(last) < 5:
     last = last + "X"
   id = first[0] + last + IDNUM[idlen - 3: ]
-  print(id)
+  #print(id)
 
   return id 
 
