@@ -17,9 +17,14 @@ def main():
     first = data[0]
     last = data[1]
     IDNUM = data[3]
-    student_id = makeID(first, last, IDNUM)
+    year = data[5]
+    major = data[6]
+    abrv_Major = major[0:3]
+    
+    student_id = makeID(first, last, IDNUM, abrv_Major,"-",year)
     output = data[0]
     outFile.write(output)
+    
 
 
     print(student_id)
@@ -30,9 +35,9 @@ def main():
   inFile.close()
   outFile.close()
 
-def makeID(first, last, IDNUM):
-  print(first, last, IDNUM)
-  idlen = len(IDNUM)
+def makeID(first, last, IDNUM, major, dash, year):
+  print(first, last, IDNUM, major, dash, year)
+  idlen = len(IDNUM) 
 
   while len(last) < 5:
     last = last + "X"
